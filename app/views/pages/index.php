@@ -10,7 +10,6 @@
                     <ul class="navbar-nav ml-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -25,7 +24,7 @@
                         <hr class="divider my-4" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 font-weight-light mb-5">A collection of projects related to food and maps. Feel free to browse, share the content and send us your feedback.</br> Interested in food and maps? Get in touch to collaborate!</p>
+                        <p class="text-white-75 font-weight-light mb-5">A collection of projects related to food and maps. Feel free to browse, share and send us your feedback.</br> Interested in food and maps? Get in touch to collaborate!</p>
                         <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
                     </div>
                 </div>
@@ -36,10 +35,10 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">We've got what you need!</h2>
+                        <h2 class="text-white mt-0">About us</h2>
                         <hr class="divider light my-4" />
-                        <p class="text-white-50 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
-                        <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+                        <p class="text-white-50 mb-4">Passionate about all things food and maps! Recently into tech and programming, this is a project based website where our love for food is combined with our love for maps and tech.</p>
+                        <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">SEE OUR PROJECTS!</a>
                     </div>
                 </div>
             </div>
@@ -50,32 +49,18 @@
                 <h2 class="text-center mt-0">Our Projects</h2>
                 <hr class="divider my-4" />
                 <div class="row">
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
+                    <div class="col-lg-3 col-lg-6 text-center">
+                        <div class="mt-5"><button type="button" class="btn btn-link">
                             <i class="fas fa-4x fa-map text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Food Standards Agency - Edinburgh</h3>
+                            <h3 class="h4 mb-2">Food Standards Agency - Edinburgh</h3></button>
                             <p class="text-muted mb-0">An interactive map of food hygiene rating in Edinburgh</p>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
+                    <div class="col-lg-3 col-lg-6 text-center">
+                        <div class="mt-5"><button type="button" class="btn btn-link">
                             <i class="fas fa-4x fa-map-marker-alt text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">A Guide to Scottish StreetFood</h3>
+                            <h3 class="h4 mb-2">A Guide to Scottish StreetFood</h3></button>
                             <p class="text-muted mb-0">A map showing Ailigh's Book food locations across Scotland.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <i class="fas fa-4x fa-globe text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Ready to Publish</h3>
-                            <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 text-center">
-                        <div class="mt-5">
-                            <i class="fas fa-4x fa-heart text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Made with Love</h3>
-                            <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
                         </div>
                     </div>
                 </div>
@@ -84,8 +69,20 @@
         <!-- Call to action-->
         <section class="page-section bg-dark text-white">
             <div class="container text-center">
-                <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
-                <a class="btn btn-light btn-xl" href="https://startbootstrap.com/themes/creative/">Download Now!</a>
+                <h2 class="mb-4">Where to find us!</h2>
+                <hr class="divider my-4" />
+                <div class="row">
+                <div class="col-lg-4">
+                            <a href="#"><i class="fas fa-4x fab fa-facebook-f text-primary mb-4"></i>
+                </div>
+                <div class="col-lg-4">
+                            <a href="#"><i class="fas fa-4x fab fa-instagram text-primary mb-4"></i>
+                </div>
+                <div class="col-lg-4">
+                            <a href="#"><i class="fas fa-4x fab fa-twitter text-primary mb-4"></i>
+                </div>
+                </div>
+
             </div>
         </section>
         <!-- Contact-->
