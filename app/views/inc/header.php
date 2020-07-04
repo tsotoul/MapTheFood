@@ -7,7 +7,7 @@
         <meta name="author" content="JasonT - info@mapthefood.com" />
         <title>MapTheFood</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="C:\xampp\htdocs\mapthefood\public\img\favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="public/img/target.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->

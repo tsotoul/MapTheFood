@@ -72,15 +72,15 @@
                 <h2 class="mb-4">Where to find us!</h2>
                 <hr class="divider my-4" />
                 <div class="row">
-                <div class="col-lg-4">
-                            <a href="#"><i class="fas fa-4x fab fa-facebook-f text-primary mb-4"></i>
-                </div>
-                <div class="col-lg-4">
-                            <a href="#"><i class="fas fa-4x fab fa-instagram text-primary mb-4"></i>
-                </div>
-                <div class="col-lg-4">
-                            <a href="#"><i class="fas fa-4x fab fa-twitter text-primary mb-4"></i>
-                </div>
+                    <div class="col-lg-4">
+                                <a href="#"><i class="fas fa-4x fab fa-facebook-f text-primary mb-4"></i></a>
+                    </div>
+                    <div class="col-lg-4">
+                                <a href="#"><i class="fas fa-4x fab fa-instagram text-primary mb-4"></i></a>
+                    </div>
+                    <div class="col-lg-4">
+                                <a href="#"><i class="fas fa-4x fab fa-twitter text-primary mb-4"></i></a>
+                    </div>
                 </div>
 
             </div>
