@@ -19,4 +19,4 @@
         <link href="css/style.css" rel="stylesheet" />
     </head>
 <body>
-<?php require APPROOT.'/views/inc/navbar.php'; ?> 
+

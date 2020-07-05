@@ -50,16 +50,18 @@
                 <hr class="divider my-4" />
                 <div class="row">
                     <div class="col-lg-3 col-lg-6 text-center">
-                        <div class="mt-5"><button type="button" class="btn btn-link">
+                        <div class="mt-5">
+                        <a href="foodhygieneedinburgh" class="btn btn-link" role="button" aria-pressed="true">
                             <i class="fas fa-4x fa-map text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">Food Standards Agency - Edinburgh</h3></button>
+                            <h3 class="h4 mb-2">Food Standards Agency - Edinburgh</h3></a>
                             <p class="text-muted mb-0">An interactive map of food hygiene rating in Edinburgh</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-lg-6 text-center">
-                        <div class="mt-5"><button type="button" class="btn btn-link">
+                        <div class="mt-5">
+                        <a href="#" class="btn btn-link" role="button" aria-pressed="true">
                             <i class="fas fa-4x fa-map-marker-alt text-primary mb-4"></i>
-                            <h3 class="h4 mb-2">A Guide to Scottish StreetFood</h3></button>
+                            <h3 class="h4 mb-2">A Guide to Scottish StreetFood</h3></a>
                             <p class="text-muted mb-0">A map showing Ailigh's Book food locations across Scotland.</p>
                         </div>
                     </div>
