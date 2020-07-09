@@ -55,7 +55,7 @@ class Core {
 
             return $url;
         } else {
-            $pages = ['Pages'];
+            $pages = ['Home'];
             return $pages;
         }
         

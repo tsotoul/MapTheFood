@@ -1,6 +1,6 @@
 <?php 
 
-class FoodHygieneEdinburgh extends Controller {
+class Foodhygieneedinburgh extends Controller {
     public function __construct() {
         $this->ratingsModel = $this->model('FoodHE');
     }
