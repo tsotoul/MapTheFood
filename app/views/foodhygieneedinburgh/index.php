@@ -58,21 +58,44 @@
 <script>
 	var mymap = L.map('mapid').setView([55.953251, -3.188267], 13);
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-    maxZoom: 18,
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-        '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    id: 'mapbox/streets-v11',
-    tileSize: 512,
-    zoomOffset: -1
-}).addTo(mymap);
+    var cities = L.layerGroup();
+    
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(mymap);
+
+    
+
+    
+
+    var places = L.layerGroup();
+    var places2 = L.layerGroup();
 
 
+<?php foreach($data['ratings'] as $rating) : ?>
+
+    var marker = L.marker([<?php echo $rating->latitude; ?>, <?php echo $rating->longitude; ?>]);
+    <?php
+    if($rating->business_type == 'Retailers - supermarkets/hypermarkets'){?>
+        marker.addTo(places);
+    <?php } ?>
+
+    
+        
+<?php endforeach; ?>
 
 
+    var overlays = {
+        "Retailers - supermarkets/hypermarkets": places,
+    }
+
+    L.control.layers(null, overlays, {position: 'topleft', collapsed: false}).addTo(mymap);
 
 </script>
-<?php foreach($data['ratings'] as $rating) : ?>
-<script>var marker = L.marker([<?php echo $rating->latitude; ?>, <?php echo $rating->longitude; ?>]).addTo(mymap);</script>
-<?php endforeach; ?>
