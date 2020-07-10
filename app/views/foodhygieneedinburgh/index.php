@@ -56,11 +56,10 @@
 
 
 <script>
+    //Map object
 	var mymap = L.map('mapid').setView([55.953251, -3.188267], 13);
 
-    var cities = L.layerGroup();
-    
-
+    //Map properties
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
         maxZoom: 18,
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
@@ -71,31 +70,81 @@
         zoomOffset: -1
     }).addTo(mymap);
 
+    //Marker categories
+    var retail = L.layerGroup();
+    var takeaway = L.layerGroup();
+    var hotel = L.layerGroup();
+    var restaurant = L.layerGroup();
+    var packers = L.layerGroup();
+    var otherRetail = L.layerGroup();
+    var pubBarClub = L.layerGroup();
+    var otherCatering = L.layerGroup();
+    var school = L.layerGroup();
+    var hospital = L.layerGroup();
     
 
+    <?php foreach($data['ratings'] as $rating) : ?>
+
+    var marker = L.marker([<?php echo $rating->latitude; ?>, <?php echo $rating->longitude; ?>]).bindPopup("<b><?php echo $rating->name; ?></b>");
     
-
-    var places = L.layerGroup();
-    var places2 = L.layerGroup();
-
-
-<?php foreach($data['ratings'] as $rating) : ?>
-
-    var marker = L.marker([<?php echo $rating->latitude; ?>, <?php echo $rating->longitude; ?>]);
     <?php
-    if($rating->business_type == 'Retailers - supermarkets/hypermarkets'){?>
-        marker.addTo(places);
+        if($rating->business_type == 'Retailers - supermarkets/hypermarkets'){?>
+            marker.addTo(retail);
+            
     <?php } ?>
+    <?php
+        if($rating->business_type == 'Takeaway/sandwich shop'){?>
+            marker.addTo(takeaway);
+    <?php } ?>
+    <?php
+        if($rating->business_type == 'Hotel/bed & breakfast/guest house'){?>
+            marker.addTo(hotel);
+    <?php } ?>
+    <?php
+        if($rating->business_type == 'Restaurant/Cafe/Canteen'){?>
+            marker.addTo(restaurant);
+    <?php } ?>
+    <?php
+        if($rating->business_type == 'Manufacturers/packers'){?>
+            marker.addTo(packers);
+    <?php } ?>
+    <?php
+        if($rating->business_type == 'Retailers - other'){?>
+            marker.addTo(otherRetail);
+    <?php } ?>
+    <?php
+        if($rating->business_type == 'Pub/bar/nightclub'){?>
+            marker.addTo(pubBarClub);
+    <?php } ?>
+    <?php
+        if($rating->business_type == 'Other catering premises'){?>
+            marker.addTo(otherCatering);
+    <?php } ?>
+    <?php
+        if($rating->business_type == 'School/college/university'){?>
+            marker.addTo(school);
+    <?php } ?>
+    <?php
+        if($rating->business_type == 'Hospitals/Childcare/Caring Premises'){?>
+            marker.addTo(hospital);
+    <?php } ?>
+    <?php endforeach; ?>
 
-    
-        
-<?php endforeach; ?>
-
-
+    alert(counter);
     var overlays = {
-        "Retailers - supermarkets/hypermarkets": places,
+        "Retailers - supermarkets/hypermarkets": retail,
+        "Takeaway/sandwich shop": takeaway,
+        "Hotel/bed & breakfast/guest house": hotel,
+        "Restaurant/Cafe/Canteen": restaurant,
+        "Manufacturers/packers": packers,
+        "Retailers - other": otherRetail,
+        "Pub/bar/nightclub": pubBarClub,
+        "Other catering premises": otherCatering,
+        "School/college/university": school,
+        "Hospitals/Childcare/Caring Premises": hospital,
+        
     }
 
-    L.control.layers(null, overlays, {position: 'topleft', collapsed: false}).addTo(mymap);
+    L.control.layers(null, overlays, {position: 'topright', collapsed: false}).addTo(mymap);
 
 </script>

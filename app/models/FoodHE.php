@@ -45,7 +45,6 @@ class FoodHE {
     public function getAllRatings() {
         $this->db->query('SELECT *
                             FROM ratings
-                            WHERE name = "Aldi"
                             ');
 
         $results = $this->db->resultSet();
