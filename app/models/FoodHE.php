@@ -42,10 +42,13 @@ class FoodHE {
         }
     }
 
+    public function clearData() {
+        $this->db->query('DELETE FROM ratings WHERE latitude = ""');
+        $this->db->execute();
+    }
+
     public function getAllRatings() {
-        $this->db->query('SELECT *
-                            FROM ratings
-                            ');
+        $this->db->query('SELECT * FROM ratings');
 
         $results = $this->db->resultSet();
 

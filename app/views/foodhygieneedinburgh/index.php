@@ -57,7 +57,7 @@
 
 <script>
     //Map object
-	var mymap = L.map('mapid').setView([55.953251, -3.188267], 13);
+	var mymap = L.map('mapid').setView([55.953251, -3.188267], 12);
 
     //Map properties
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -81,16 +81,21 @@
     var otherCatering = L.layerGroup();
     var school = L.layerGroup();
     var hospital = L.layerGroup();
-    
 
+    //Define the icon
+    var dotIcon = L.icon ({
+        iconUrl: 'public/img/dot.png',
+        iconSize: [20,20],
+    });
+
+    //Loop through the results and categorize
     <?php foreach($data['ratings'] as $rating) : ?>
 
-    var marker = L.marker([<?php echo $rating->latitude; ?>, <?php echo $rating->longitude; ?>]).bindPopup("<b><?php echo $rating->name; ?></b>");
-    
+    var marker = L.marker([<?php echo $rating->latitude; ?>, <?php echo $rating->longitude; ?>], {icon:dotIcon}).bindPopup("<b><?php echo $rating->name; ?></b>");
+
     <?php
         if($rating->business_type == 'Retailers - supermarkets/hypermarkets'){?>
             marker.addTo(retail);
-            
     <?php } ?>
     <?php
         if($rating->business_type == 'Takeaway/sandwich shop'){?>
@@ -130,19 +135,18 @@
     <?php } ?>
     <?php endforeach; ?>
 
-    alert(counter);
     var overlays = {
-        "Retailers - supermarkets/hypermarkets": retail,
-        "Takeaway/sandwich shop": takeaway,
-        "Hotel/bed & breakfast/guest house": hotel,
-        "Restaurant/Cafe/Canteen": restaurant,
-        "Manufacturers/packers": packers,
-        "Retailers - other": otherRetail,
-        "Pub/bar/nightclub": pubBarClub,
-        "Other catering premises": otherCatering,
-        "School/college/university": school,
-        "Hospitals/Childcare/Caring Premises": hospital,
-        
+            "Retailers - supermarkets/hypermarkets": retail,
+            "Takeaway/sandwich shop": takeaway,
+            "Hotel/bed & breakfast/guest house": hotel,
+            "Restaurant/Cafe/Canteen": restaurant,
+            "Manufacturers/packers": packers,
+            "Retailers - other": otherRetail,
+            "Pub/bar/nightclub": pubBarClub,
+            "Other catering premises": otherCatering,
+            "School/college/university": school,
+            "Hospitals/Childcare/Caring Premises": hospital,
+            
     }
 
     L.control.layers(null, overlays, {position: 'topright', collapsed: false}).addTo(mymap);

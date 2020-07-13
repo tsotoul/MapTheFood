@@ -10,7 +10,7 @@ define('DB_NAME', 'edin_ratings');
 define('APPROOT', dirname(dirname(__FILE__)));
 
 //URL Root
-define('URLROOT', '_YOUR_URL_');
+define('URLROOT', 'https://www.mapthefood.com');
 
 //Site name
 define('SITENAME', 'MapTheFood');
