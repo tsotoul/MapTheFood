@@ -30,6 +30,7 @@
         </style>
     </head>
 <body>
+    
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
         <div class="container">
@@ -43,9 +44,12 @@
                 </ul>
             </div>
         </div>
+       
     </nav>
-    <div id="mapid"></div>
- 
+
+    <div id="mapid"></div>  
+
+    
 
 
 
@@ -55,7 +59,8 @@
 
 
 
-<script>
+
+    <script>
     //Map object
 	var mymap = L.map('mapid').setView([55.953251, -3.188267], 12);
 
@@ -82,6 +87,11 @@
     var school = L.layerGroup();
     var hospital = L.layerGroup();
 
+    var improvementRequired = L.layerGroup();
+    var pass = L.layerGroup();
+    var passAndEatSafe = L.layerGroup();
+    var awaitingInspection = L.layerGroup();
+
     //Define the icon
     var dotIcon = L.icon ({
         iconUrl: 'public/img/dot.png',
@@ -93,6 +103,7 @@
 
     var marker = L.marker([<?php echo $rating->latitude; ?>, <?php echo $rating->longitude; ?>], {icon:dotIcon}).bindPopup("<b><?php echo $rating->name; ?></b>");
 
+    //Check category
     <?php
         if($rating->business_type == 'Retailers - supermarkets/hypermarkets'){?>
             marker.addTo(retail);
@@ -133,9 +144,29 @@
         if($rating->business_type == 'Hospitals/Childcare/Caring Premises'){?>
             marker.addTo(hospital);
     <?php } ?>
+
+    //Check rating
+    <?php
+        if($rating->rating == 'Improvement Required'){?>
+            marker.addTo(improvementRequired);
+    <?php } ?>  
+    <?php
+        if($rating->rating == 'Pass'){?>
+            marker.addTo(pass);
+    <?php } ?> 
+    <?php
+        if($rating->rating == 'Pass and Eat Safe'){?>
+            marker.addTo(passAndEatSafe);
+    <?php } ?> 
+    <?php
+        if($rating->rating == 'Awaiting Inspection'){?>
+            marker.addTo(awaitingInspection);
+    <?php } ?> 
+
+
     <?php endforeach; ?>
 
-    var overlays = {
+    var categories = {
             "Retailers - supermarkets/hypermarkets": retail,
             "Takeaway/sandwich shop": takeaway,
             "Hotel/bed & breakfast/guest house": hotel,
@@ -146,9 +177,23 @@
             "Other catering premises": otherCatering,
             "School/college/university": school,
             "Hospitals/Childcare/Caring Premises": hospital,
-            
     }
 
-    L.control.layers(null, overlays, {position: 'topright', collapsed: false}).addTo(mymap);
+    var rating = {
+        "Improvement Required": improvementRequired,
+        "Pass": pass,
+        "Pass and Eat Safe": passAndEatSafe,
+        "Awaiting Inspection": awaitingInspection,
+    }
 
+    L.control.layers(categories, rating, {position: 'topright', collapsed: false}).addTo(mymap);
+	
 </script>
+<!-- Bootstrap core JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<!-- Third party plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>

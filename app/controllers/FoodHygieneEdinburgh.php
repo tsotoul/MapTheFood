@@ -20,4 +20,14 @@ class Foodhygieneedinburgh extends Controller {
 
         $this->view('foodhygieneedinburgh/index', $data);
     }
+
+    public function getRating(){
+        $ratings = $this->ratingsModel->getRatingByCategory();
+
+        $data = [
+            'ratings' => $ratings
+            ];
+
+        $this->view('foodhygieneedinburgh/index', $data);
+    }
 }

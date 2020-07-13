@@ -55,4 +55,14 @@ class FoodHE {
         return $results;
     }
 
+    public function getRatingByCategory(){
+        $category = "Retailers - supermarkets/hypermarkets";
+        $this->db->query("SELECT * FROM ratings WHERE business_type = '$category'");
+
+        $results = $this->db->resultSet();
+
+        return $results;
+
+    }
+
 }
