@@ -24,12 +24,14 @@
  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
+   <link rel="stylesheet" href="public/css/leaflet-sidebar.css" />
         <style>
             body {background-color: #f4623a;}
-            #mapid {position: absolute; top: 70px; bottom: 50px; left: 10px; right: 10px;}
+            #mapid {position: absolute; top: 70px; bottom: 10px; left: 5px; right: 5px;}
         </style>
     </head>
 <body>
+
     
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
@@ -47,7 +49,11 @@
        
     </nav>
 
-    <div id="mapid"></div>  
+<?php require APPROOT.'/views/inc/mapsidebar.php'?>
+
+<div id="mapid"></div>  
+    
+    
 
     
 
@@ -58,17 +64,16 @@
 
 
 
-
+    <script src="public/js/leaflet-sidebar.js"></script>
 
     <script>
     //Map object
-	var mymap = L.map('mapid').setView([55.953251, -3.188267], 12);
+	var mymap = L.map('mapid',{zoomControl: false}).setView([55.953251, -3.188267], 12);
 
     //Map properties
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
         maxZoom: 18,
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> ' +
             'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         id: 'mapbox/streets-v11',
         tileSize: 512,
@@ -186,7 +191,11 @@
         "Awaiting Inspection": awaitingInspection,
     }
 
-    L.control.layers(categories, rating, {position: 'topright', collapsed: false}).addTo(mymap);
+    L.control.layers(null, categories, {position: 'topright', collapsed: true}).addTo(mymap);
+
+    L.control.zoom({position: 'bottomright'}).addTo(mymap);
+
+    var sidebar = L.control.sidebar('sidebar').addTo(mymap);
 	
 </script>
 <!-- Bootstrap core JS-->
