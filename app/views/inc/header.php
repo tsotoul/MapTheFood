@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Maps/Food" />
+        <meta name="description" content="A collection of projects related to food and maps. Feel free to browse, share and send us your feedback." />
         <meta name="author" content="JasonT - info@mapthefood.com" />
         <title>MapTheFood</title>
         <!-- Favicon-->

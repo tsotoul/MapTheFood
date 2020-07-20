@@ -6,11 +6,11 @@ class Foodhygieneedinburgh extends Controller {
     }
 
     public function index() {
-        //$this->ratingsModel->clearDb();
+        $this->ratingsModel->clearDb();
 
-        //$this->ratingsModel->loadData();
+        $this->ratingsModel->loadData();
 
-        //$this->ratingsModel->clearData();
+        $this->ratingsModel->clearData();
         
         $ratings = $this->ratingsModel->getAllRatings();
         

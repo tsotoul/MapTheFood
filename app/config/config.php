@@ -4,7 +4,7 @@
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'edin_ratings');
+define('DB_NAME', 'foodhugieneedinburgh');
 
 //App root
 define('APPROOT', dirname(dirname(__FILE__)));
