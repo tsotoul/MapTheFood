@@ -10,7 +10,7 @@ class FoodHE {
 
     public function clearDb() {
         $this->db->query('DELETE 
-                            FROM food_ratings
+                            FROM ratings
                             ');
         $this->db->execute();
     }
@@ -28,7 +28,7 @@ class FoodHE {
             $latitude = $row->Geocode->Latitude;
             $longitude = $row->Geocode->Longitude;
                 
-            $this->db->query('INSERT INTO food_ratings (name, business_type, address, rating, rating_date, latitude, longitude) 
+            $this->db->query('INSERT INTO ratings (name, business_type, address, rating, rating_date, latitude, longitude) 
                             VALUES (:name, :business_type, :address, :rating, :rating_date, :latitude, :longitude)');
 
             $this->db->bind(':name', $name);
@@ -43,12 +43,12 @@ class FoodHE {
     }
 
     public function clearData() {
-        $this->db->query('DELETE FROM food_ratings WHERE latitude = ""');
+        $this->db->query('DELETE FROM ratings WHERE latitude = ""');
         $this->db->execute();
     }
 
     public function getAllRatings() {
-        $this->db->query('SELECT * FROM food_ratings');
+        $this->db->query('SELECT * FROM ratings');
 
         $results = $this->db->resultSet();
 
