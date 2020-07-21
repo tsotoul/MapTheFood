@@ -31,26 +31,10 @@
     />
     <style>
         body {background-color: #f4623a;}
-        #mapid {position: absolute; top: 70px; bottom: 10px; left: 5px; right: 5px;}
+        #mapid {position: absolute; top: 10px; bottom: 10px; left: 5px; right: 5px;}
     </style>
     </head>
 <body>
-
-    
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="home">MapTheFood</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="home #about">About</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="home #services">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="home #contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
     <!-- Sidebar-->
     <div id="sidebar" class="sidebar collapsed">
@@ -237,6 +221,9 @@
         "Awaiting Inspection": awaitingInspection,
     }
  
+    //Scale
+    L.control.scale({position: 'bottomright'}).addTo(mymap);
+
     //Zoom control
     L.control.zoom({position: 'bottomright'}).addTo(mymap);
 
