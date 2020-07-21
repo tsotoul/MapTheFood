@@ -136,7 +136,7 @@
     //Loop through the results and categorize
     <?php foreach($data['ratings'] as $rating) : ?>
 
-    var marker = L.marker([<?php echo $rating->latitude; ?>, <?php echo $rating->longitude; ?>], {icon:dotIcon}).bindPopup("<b><?php echo $rating->name; ?></b>");
+    var marker = L.marker([<?php echo $rating->latitude; ?>, <?php echo $rating->longitude; ?>], {icon:dotIcon}).bindPopup("<b><?php echo $rating->name; ?></b><br/><?php echo $rating->rating; ?>");
 
     //Check category
     <?php
