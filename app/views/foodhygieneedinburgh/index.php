@@ -31,7 +31,7 @@
     />
     <style>
         body {background-color: #f4623a;}
-        #mapid {position: absolute; top: 10px; bottom: 10px; left: 5px; right: 5px;}
+        #mapid {position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px;}
     </style>
     </head>
 <body>
