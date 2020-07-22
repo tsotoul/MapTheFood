@@ -62,17 +62,34 @@
                     <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                 </h1>
                 <span id="layercontrol"></span>
-                <p>A responsive sidebar for mapping libraries like <a href="http://leafletjs.com/">Leaflet</a> or <a href="http://openlayers.org/">OpenLayers</a>.</p>
+                <br><p>An interactive map showing the food hygiene rating data of the Greater Edinburgh area as found on <b>Food Standards Agency</b> (<a href="https://www.food.gov.uk">https://www.food.gov.uk</a>) website.</p><hr>
+                <p>Select <i class="fas fa-layer-group"></i> to browse the different categories and layers and click/tap on the markers on the map to see the business name, rating and relevant info.</p>
 
+                <p>Share the content selecting <i class="fa fa-share-alt-square"></i></p>
+                <p>Select <i class="fas fa-info-circle"></i> to find more information about <b>Food Standards Agency</b> and the data shown</p>
+                <p>Select <i class="fas fa-home"></i> to return to homepage</p>
             </div>
 
             <div class="sidebar-pane" id="layers">
                 <h1 class="sidebar-header">Layers<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
-                <div id="layers"> <!--Here the layer control menu will be added--></div>
+                <div class="label1"><p><b>Business Type</b></p></div>
+                <div id="layers"><!--Here the layer control menu will be added--></div>
+                <p><b>Rating Result</b></p>
+                <div id="layers2"><!--Here the layer control menu will be added--></div>
             </div>
 
             <div class="sidebar-pane" id="share">
                 <h1 class="sidebar-header">Share<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+            </div>
+
+            <div class="sidebar-pane" id="info">
+                <h1 class="sidebar-header">Information<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+                <span id="layercontrol"></span>
+                <br><p><b>About the data</b></p>
+                <p>The data provide the food hygiene rating or inspection result given to a business and reflect the standards of food hygiene found on the date of inspection or visit by the local authority.
+                 Businesses include restaurants, pubs, cafés, takeaways, hotels and other places consumers eat, as well as supermarkets and other food shops.</p>
+                <p>The data are held on behalf of local authorities participating in the Food Hygiene Information Scheme (FHIS) in Scotland.</p>
+                <p><i><a href="https://ratings.food.gov.uk/open-data/en-GB">(https://ratings.food.gov.uk/open-data/en-GB)</a></i></p>
             </div>
 
             <div class="sidebar-pane" id="settings">
@@ -236,11 +253,12 @@
     //Move Layers control to sidebar
     var layerControlContainer = layerControl.getContainer();
     var layerControlContainer2 = layerControl2.getContainer();
+    var a2 = document.getElementById('layers2');
     var a = document.getElementById('layers');
     function setParent(el, newParent){
         newParent.appendChild(el);
     }
-    setParent(layerControlContainer, a);
+    setParent(layerControlContainer, a2);
     setParent(layerControlContainer2, a);
 
     
