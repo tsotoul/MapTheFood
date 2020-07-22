@@ -45,12 +45,14 @@
                 <li><a href="#layers" role="tab"><i class="fas fa-layer-group"></i></a></li>
                 <li><a href="#share" role="tab"><i class="fa fa-share-alt-square"></i></a></li>
                 <li><a href="#info" role="tab"><i class="fas fa-info-circle"></i></a></li>
-                <li><a href="home" role="tab"><i class="fas fa-home"></i></a></li>
+                <li><a href="foodhygieneedinburgh" role="tab"><i class="fas fa-sync-alt"></i></a></li>
+                
             </ul>
 
 
             <ul role="tablist">
                 <li><a href="#settings" role="tab"><i class="fa fa-cog"></i></a></li>
+                <li><a href="home" role="tab"><i class="fas fa-home"></i></a></li>
             </ul>
         </div>
 
