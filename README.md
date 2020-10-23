@@ -2,7 +2,7 @@
 
 ## A collection of projects related to food and maps.
 
-A PHP MVC project related to food and maps using the LAMP stack and Leaflet.js library for map handling.
+A PHP MVC project related to food and maps using the LAMP stack and Leaflet.js library for map handling. Visit https://mapthefood.com/ for more info.
 
 - MVC Framework
 - PHP Backend
