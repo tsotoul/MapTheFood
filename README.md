@@ -9,6 +9,7 @@ A PHP MVC project related to food and maps using the LAMP stack and Leaflet.js l
 - HTML
 - CSS
 - MySQL
+- Bootstrap
 - Leaflet.js | Map Data
 - OpenStreetMap | Imagery
 - Mapbox
